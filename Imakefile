@@ -1,0 +1,64 @@
+XCOMM
+XCOMM Imakefile for XGikadai
+XCOMM
+
+XCOMM
+XCOMM XGikadai Public Record Directory
+XCOMM
+
+RECORD_DIRECTORY = /usr/local/games/xgikadai
+RECORD_FILE = xgikadai-record
+
+XCOMM
+XCOMM Voice
+XCOMM
+
+VOICE_DEF = -DNOVOICE
+VOICE_DEVICE = 
+## VOICE_DEF = -DVOICE
+## VOICE_DEVICE = /dev/audio
+
+
+XCOMM
+XCOMM Defines
+XCOMM
+
+XGIKADAI_RECORD_DIR = -DRECORD_DIR=\"$(RECORD_DIRECTORY)\"
+XGIKADAI_VOICE_DEF = $(VOICE_DEF) -DVOICE_DEVICE=\"$(VOICE_DEVICE)\"
+DEFINES = $(XGIKADAI_VOICE_DEF) $(XGIKADAI_RECORD_DIR)
+
+XCOMM
+XCOMM Use GCC
+XCOMM
+
+CC = gcc
+
+XCOMM
+XCOMM Object Files
+XCOMM
+
+OBJS = calc.o course.o enemy.o file.o gr.o grx.o gv.o image.o \
+       main.o mycar.o record.o screen.o title.o voice.o window.o
+
+XCOMM
+XCOMM Local Libraries
+XCOMM
+
+SYS_LIBRARIES = -lm
+LOCAL_LIBRARIES = XawClientLibs
+
+XCOMM
+XCOMM Program Target
+XCOMM
+
+ComplexProgramTarget(xgikadai)
+
+XCOMM
+XCOMM Install Record File
+XCOMM
+
+INSTALL_RECORD_FLAGS = -m 0666
+
+install:: xgikadai-record
+	MakeDir($(RECORD_DIRECTORY))
+	$(INSTALL) $(INSTALLFLAGS) $(INSTALL_RECORD_FLAGS) xgikadai-record $(RECORD_DIRECTORY)/$(RECORD_FILE)
