@@ -246,9 +246,9 @@ Pixmap image_to_pixmap( unsigned char *data, int *width_ret, int *height_ret )
 		}
 	}
 	XPutImage( display, p, gc, img_data, 0, 0, 0, 0, width, height );
-	XDestroyImage( img_data );
+	// XDestroyImage( img_data );
 	if( width_ret != NULL ) *width_ret = width;
 	if( height_ret != NULL ) *height_ret = height;
-	free( img );
+	// free( img );
 	return p;
 }
