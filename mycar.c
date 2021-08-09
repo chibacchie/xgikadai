@@ -64,7 +64,7 @@ void mycar_init()
 
 int mmove()
 {
-	int i, k6, k7, k8, k9, j_p, sig;
+	int i, sig;
 	int vx, vy;
 	int mccd_1;
 	int mx1, my1, marg1;

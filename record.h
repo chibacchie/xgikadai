@@ -11,3 +11,4 @@ void record_init();
 void record_redraw();
 void record_button_press();
 void enter_redraw();
+void enter_init();

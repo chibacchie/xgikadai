@@ -51,9 +51,11 @@ void title_init()
 
 void title_start()
 {
+#ifdef VOICE_DEVICE
 	FILE *fp;
 	extern unsigned char voice_data[];
 	int i;
+#endif
 	title_redraw();
 	if( voice_flag == 0 ) return;
 #ifdef VOICE_DEVICE

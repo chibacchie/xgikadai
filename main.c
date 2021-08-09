@@ -65,9 +65,9 @@ void usage()
 	exit( 1 );
 }
 
-main( int argc, char *argv[] )
+int main( int argc, char *argv[] )
 {
-	int i, c;
+	int i;
 	XtTranslations new_translations;
 	topLevel = XtVaAppInitialize( &app_context, "XGikadai",
 		NULL, 0, &argc, argv, NULL, NULL );
@@ -105,4 +105,6 @@ main( int argc, char *argv[] )
 	game_mode = MODE_TITLE;
 	title_start();
 	XtAppMainLoop( app_context );
+
+	return 0;
 }

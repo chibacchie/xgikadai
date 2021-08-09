@@ -84,7 +84,7 @@ void calc_ranking()
 	print_ranking();
 }
 
-int game()
+void game()
 {
 	course_draw();
 	calc_ranking();

@@ -26,7 +26,6 @@ static double
 	f_in2 = 128.0,
 	f_in_b2 = 10.0,
 	f_out2 = 0.1;
-static int f_count = 100;
 
 double en_calc_handle( long l1, long l2 )
 {
@@ -137,8 +136,7 @@ void en_move()
 void crash()
 {
 	int sx1, sz1;
-	int sarg;
-	int r, cx, cy;
+	int r, cy;
 
 	sz1 = ex - mx;
 	sx1 = ey - my;
@@ -148,11 +146,9 @@ void crash()
 		if( erz > erx ) r = erz;
 		else r = erx;
 		if( r == 0 ){
-			cx = 0;
 			cy = 0;
 		}
 		else{
-			cx = erx * EN_A_LEN / r;
 			cy = erz * EN_A_LEN / r;
 		}
 		if( cy > 0 ){

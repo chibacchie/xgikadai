@@ -20,3 +20,4 @@ extern int reverse_count;
 
 void mycar_init();
 int mycar_move();
+int mmove();

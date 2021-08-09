@@ -56,3 +56,5 @@ void screen_init( void );
 void screen_clear( void );
 void screen_draw_sobj( void );
 void screen_draw_lobj( void );
+void screen_draw_message( char* );
+void screen_draw_staff( void );

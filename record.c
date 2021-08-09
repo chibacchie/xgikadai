@@ -136,7 +136,7 @@ void enter_button_press( int x, int y )
 void enter_redraw()
 {
 	static char name_string[256], letter[5];
-	int i, c;
+	int i;
 
 	game_redraw();
 	strcpy( name_string, "Enter your name: " );

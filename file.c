@@ -173,8 +173,6 @@ void read_sobj()
 	int i, j, k, l, n;
 	int x, y;
 	int p1, p2, p3, p4, c, a;
-	FILE *fp;
-	char fn[80];
 	int ptr;
 	OBJ *p;
 	extern int obj_pos_data[];

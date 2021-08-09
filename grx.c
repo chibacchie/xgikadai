@@ -165,7 +165,6 @@ void init()
 
 unsigned long get_color( Display *d, Colormap c_map, int r, int g, int b )
 {
-	int i;
 	XColor xc;
 
 	xc.red = r << 8;
@@ -236,19 +235,19 @@ Pixmap image_to_pixmap( unsigned char *data, int *width_ret, int *height_ret )
 /* Create Pixmap */
 	p = XCreatePixmap( display, window, width, height, depth );
 	if( p == BadValue ) return BadValue;
-	vram = malloc( width * height * (depth+7)/8 );
+	vram = malloc( width * height * 4 );
 	img_data = XCreateImage( display,
 		DefaultVisual( display, screen ), depth,
 		ZPixmap, 0, vram, width, height, 8, 0 );
 	for( i = 0 ; i < height ; i++ ){
 		for( j = 0 ; j < width ; j++ ){
-			XPutPixel( img_data, j, i, color[img[i*width+j]] );
+			XPutPixel( img_data, j, i, color[(unsigned int) img[i*width+j]] );
 		}
 	}
 	XPutImage( display, p, gc, img_data, 0, 0, 0, 0, width, height );
-	// XDestroyImage( img_data );
+	XDestroyImage( img_data );
 	if( width_ret != NULL ) *width_ret = width;
 	if( height_ret != NULL ) *height_ret = height;
-	// free( img );
+	free( img );
 	return p;
 }

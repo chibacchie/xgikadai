@@ -118,7 +118,6 @@ static void draw_sub( int i )
 	int q1, q2, q3, q4;
 	Point *p;
 	int n1, n2, n3, n4;
-	int x, y, z;
 	int dist;
 
 	n1 = l_polygon[i].p1;
@@ -319,8 +318,8 @@ void screen_draw_sobj()
 	int sx, sy, sz, sarg, esarg;
 	int ox, oy;
 	Polygon *p;
-	Point *p3, q1, q2, q3, q4;
-	Point2 *p2, r1, r2, r3, r4;
+	Point q1, q2, q3, q4;
+	Point2 r1, r2, r3, r4;
 	Point nv;
 	OBJ *op;
 	int pon;
@@ -532,8 +531,7 @@ void screen_draw_message( str )
 
 }
 
-void screen_draw_staff( str )
-	char *str;
+void screen_draw_staff()
 {
 	int i;
 	for( i = 0 ; i < STAFF_NUM ; i++ ){
