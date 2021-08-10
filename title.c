@@ -7,6 +7,7 @@
 #include "screen.h"
 #include "window.h"
 #include "title.h"
+#include "record.h"
 
 #ifdef NOVOICE
 #undef VOICE
@@ -45,7 +46,7 @@ static char *title_string = "X Gikadai Racer ver. 1.0 (c) TUT Computer Club,1996
 
 void title_init()
 {
-	extern char image_title[];
+	extern unsigned char image_title[];
 	title_pixmap = image_to_pixmap( image_title, &title_pixmap_width, &title_pixmap_height );
 }
 

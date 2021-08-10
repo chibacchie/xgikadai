@@ -9,6 +9,9 @@ extern char best_lap_name[MAX_NAME_LEN];
 
 void record_init();
 void record_redraw();
-void record_button_press();
+void record_button_press( int x, int y );
 void enter_redraw();
 void enter_init();
+void enter_button_press( int x, int y );
+int read_time();
+int write_time();

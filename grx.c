@@ -5,6 +5,9 @@
 #include "grx.h"
 #include "screen.h"
 #include "window.h"
+#include "title.h"
+#include "record.h"
+#include "course.h"
 
 Display *display;
 int screen, depth;

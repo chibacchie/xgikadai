@@ -6,6 +6,8 @@
 #include "window.h"
 #include "record.h"
 #include "mycar.h"
+#include "grx.h"
+#include "title.h"
 
 Pixmap record_pixmap;
 int record_pixmap_width, record_pixmap_height;
@@ -25,7 +27,7 @@ char best_lap_name[MAX_NAME_LEN];
 
 void record_init()
 {
-	extern char image_record[];
+	extern unsigned char image_record[];
 	record_pixmap = image_to_pixmap( image_record, &record_pixmap_width, &record_pixmap_height );
 }
 
@@ -39,7 +41,7 @@ void record_redraw()
 	XCopyArea( display, record_pixmap, window, gc,
 		0, 0, record_pixmap_width, record_pixmap_height, 0, 0 );
 	for( i = 0 ; i < 10 ; i++ ){
-		sprintf( buf, "%d'%02d\"%02d %3s",
+		snprintf( buf, sizeof(buf), "%d'%02d\"%02d %.3s",
 			best_time[i] / 6000,
 			(best_time[i] % 6000) / 100, 
 			best_time[i] % 100,
@@ -48,7 +50,7 @@ void record_redraw()
 			150 + (i / 5) * 150, 80 + (i % 5) * 20,
 			buf, strlen( buf ) );
 	}
-	sprintf( buf, "BEST LAP %d'%02d\"%02d %3s",
+	snprintf( buf, sizeof(buf), "BEST LAP %d'%02d\"%02d %.3s",
 		best_lap / 6000,
 		(best_lap % 6000) / 100, 
 		best_lap % 100,

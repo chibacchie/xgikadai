@@ -30,3 +30,4 @@ void ClearEventInfo();
 void GetEvent();
 int isLeft(), isMid(), isRight();
 Pixmap mag_to_pixmap( Display *d, Window w, int scr, int depth, GC gc, char *data, int *width_ret, int *height_ret );
+Pixmap image_to_pixmap( unsigned char *data, int *width_ret, int *height_ret );

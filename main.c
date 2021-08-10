@@ -4,6 +4,9 @@
 #include "gr.h"
 #include "grx.h"
 #include "window.h"
+#include "file.h"
+#include "title.h"
+#include "record.h"
 
 void press_left(), press_right(), press_mid();
 void release_left(), release_mid(), release_right();

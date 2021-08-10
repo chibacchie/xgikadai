@@ -59,6 +59,8 @@ void calc_ranking();
 void enter_name( char *str );
 void draw_course();
 void game_redraw();
+void game_init();
+void game();
 
 void calc_init();
 double dd_sin( double n );

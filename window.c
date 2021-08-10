@@ -9,6 +9,7 @@
 #include "title.h"
 #include "mycar.h"
 #include "enemy.h"
+#include "record.h"
 
 Window window;
 
